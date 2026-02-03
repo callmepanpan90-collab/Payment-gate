@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ONEPAY - Payment Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="config/tailwind-theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: window.TAILWIND_THEME_EXTEND } };
+    </script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/hero.css">
+</head>
+<body class="font-urbanist bg-bg-primary text-text-primary min-h-screen w-full relative m-0 p-0 overflow-x-hidden">
+    <!-- Top Menu / Header -->
+    <header class="relative w-full border-b border-border bg-bg-primary z-[100]">
+        <div class="flex flex-row items-center justify-between gap-2 py-4 w-full max-w-[1416px] mx-auto">
+            <div class="flex flex-row items-center gap-8 flex-1">
+                <span class="site-logo relative inline-block w-[160.88px] h-8" role="img" aria-label="2ONEPAY Logo">
+                    <img src="images/logo.svg" alt="" class="logo-dark w-[160.88px] h-8 object-contain block">
+                    <img src="images/logo-light.svg" alt="" class="logo-light absolute inset-0 w-full h-full object-contain hidden">
+                </span>
+                <nav class="flex flex-row gap-8 items-center">
+                    <a href="#" class="flex flex-row justify-center items-center gap-3 relative font-urbanist text-base leading-6 text-accent-primary font-bold">
+                        <img src="images/home-icon.svg" alt="Home" class="w-6 h-6 flex-shrink-0">
+                        <span>Home page</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#" class="flex flex-row justify-center items-center gap-3 font-urbanist text-base leading-6 text-text-secondary hover:text-accent-primary transition-colors">
+                        <img src="images/bitcoin-wallet-icon.svg" alt="Deposit" class="w-6 h-6 flex-shrink-0">
+                        <span>Deposit & Withdraw</span>
+                    </a>
+                    <a href="#" class="flex flex-row justify-center items-center gap-3 font-urbanist text-base leading-6 text-text-secondary hover:text-accent-primary transition-colors">
+                        <div class="relative w-6 h-6 flex items-center justify-center">
+                            <img src="images/user-multiple-icon.svg" alt="P2P" class="w-6 h-6 flex-shrink-0">
+                            <span class="nav-badge absolute top-[11px] left-[11px] font-urbanist font-extrabold text-[9px] leading-none text-text-tertiary bg-transparent border border-border p-0 w-[13px] h-[9px] flex items-center justify-center text-center">0%</span>
+                        </div>
+                        <span>P2P Trade</span>
+                    </a>
+                    <a href="#" class="flex flex-row justify-center items-center gap-3 font-urbanist text-base leading-6 text-text-secondary hover:text-accent-primary transition-colors">
+                        <img src="images/money-exchange-icon.svg" alt="P2E" class="w-6 h-6 flex-shrink-0">
+                        <span>P2E</span>
+                    </a>
+                    <a href="#" class="flex flex-row justify-center items-center gap-3 font-urbanist text-base leading-6 text-text-secondary hover:text-accent-primary transition-colors">
+                        <img src="images/drag-drop-icon.svg" alt="More" class="w-6 h-6 flex-shrink-0">
+                        <span>More</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-row items-center gap-3">
+                <img src="images/search-icon.svg" alt="Search" class="w-6 h-6 cursor-pointer hover:opacity-80 transition-opacity">
+                <div class="w-px h-4 bg-divider"></div>
+                <a href="pages/login.html" class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[108px] h-10 bg-bg-secondary text-accent-primary border border-divider hover:border-accent-primary/50 hover:bg-bg-tertiary/50">Log in</a>
+                <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[108px] h-10 bg-accent-primary text-accent-text">Sign up</button>
+                <img src="images/global-icon.svg" alt="Language" class="w-6 h-6 cursor-pointer hover:opacity-80 transition-opacity">
+                <img id="theme-toggle" src="images/theme-mode-icon.svg" alt="Theme" class="w-6 h-6 cursor-pointer hover:opacity-80 transition-opacity" role="button" aria-label="Toggle light/dark theme" title="Switch theme">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero: full màn (background), container 1416px -->
+    <section class="hero relative w-full pt-[174px] pb-[202px] flex justify-center items-center z-10 bg-transparent min-h-[708px] max-h-[708px] overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-transparent z-0"></div>
+        <img src="images/main-bg.png" alt="Hero background" class="hero-main-bg">
+        <img src="images/image-11.png" alt="Background Image" class="bg-image-11">
+        <div class="bg-group-2085662978 absolute w-[432px] h-[532.88px] max-h-[532.88px] opacity-[0.16] z-0 pointer-events-none overflow-hidden hidden">
+            <img src="images/group-2085662975.png" alt="Group 2085662975" class="absolute top-0 left-0 w-[432px] h-[532.88px] object-contain">
+            <div class="relative w-full h-full">
+                <div class="bg-object bg-object-vp absolute flex items-center justify-center">
+                    <img src="images/object-vp.png" alt="VP" class="w-full h-full object-cover">
+                    <span class="bg-object-text absolute font-urbanist font-extrabold text-[rgba(109,85,67,0.6)] text-center">VP</span>
+                </div>
+                <div class="bg-object bg-object-usdp absolute flex items-center justify-center">
+                    <img src="images/object-vp.png" alt="USDP" class="w-full h-full object-cover">
+                    <span class="bg-object-text absolute font-urbanist font-extrabold text-[rgba(109,85,67,0.6)] text-center">USDP</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero__container relative flex flex-col items-center gap-8 w-full max-w-[1416px] mx-auto z-[1]">
+            <div class="flex flex-col items-center gap-3">
+                <h1 class="font-urbanist font-medium text-[32px] leading-none uppercase text-center text-text-primary m-0">Start Online Trading</h1>
+                <h2 class="font-urbanist font-bold text-[64px] leading-none text-center text-text-primary m-0">Safe & Secure with 2ONEPAY</h2>
+            </div>
+            <button class="inline-flex justify-center items-center gap-2 px-5 py-2 rounded-lg font-urbanist text-base font-bold leading-6 cursor-pointer transition-all duration-300 border-none w-[164px] h-12 bg-accent-primary text-accent-text">Create account</button>
+            <div class="flex flex-row justify-center items-end gap-[16.67px]">
+                <img src="images/group-2085662979.png" alt="Group 2085662979" class="w-[165.33px] h-10 object-contain">
+                <img src="images/frame-122.svg" alt="Frame 122" class="w-[0.83px] h-[16.67px] object-contain">
+                <img src="images/image-15.png" alt="Rating" class="w-[154.67px] h-[26.67px] object-contain">
+                <span class="font-urbanist font-bold text-[16.67px] leading-[1.4em] text-text-primary">4.8</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content: main full, container 1416px chứa tất cả section còn lại -->
+    <main class="w-full">
+        <div class="content w-full max-w-[1416px] mx-auto">
+            <!-- Features Section -->
+            <section class="relative w-full z-10">
+                <div class="flex flex-col items-center gap-8 w-full pb-[120px]">
+                    <div class="flex flex-col items-center gap-2 w-[1416px] max-w-full text-center">
+                        <h2 class="font-urbanist font-bold text-[32px] leading-[1.25em] text-text-primary m-0"><span class="text-accent-primary underline decoration-1 underline-offset-2">2,826</span> daily transactions are protected by 2ONEPAY</h2>
+                        <p class="font-urbanist font-medium text-base leading-6 text-text-tertiary m-0 text-center">
+                            2ONEPAY ensures secure and reliable payments every day, protecting over 1,000 transactions with advanced systems that help users pay safely and with confidence.
+                        </p>
+                    </div>
+                    <div class="flex flex-row justify-stretch items-stretch self-stretch gap-6 w-full">
+                        <div class="feature-card flex flex-col gap-3 p-5 flex-1 rounded-2xl">
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Proven Reliability</h3>
+                            <p class="font-urbanist font-medium text-sm leading-[1.43] text-text-tertiary m-0 h-[60px] overflow-hidden">
+                                Millions of P2P crypto trades and P2E escrow transactions have been securely protected by 2ONEPAY.
+                            </p>
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/box-top-1.png" alt="Proven Reliability" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="feature-card flex flex-col gap-3 p-5 flex-1 rounded-2xl">
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Transparent Escrow</h3>
+                            <p class="font-urbanist font-medium text-sm leading-[1.43] text-text-tertiary m-0 h-[60px] overflow-hidden">
+                                Crypto is held in escrow and released only when the trade is completed. 24/7 support is available when needed.
+                            </p>
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/box-top-2.png" alt="Transparent Escrow" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="feature-card flex flex-col gap-3 p-5 flex-1 rounded-2xl">
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">P2P Trading</h3>
+                            <p class="font-urbanist font-medium text-sm leading-[1.43] text-text-tertiary m-0 h-[60px] overflow-hidden">
+                                Buy and sell crypto directly between users with multiple payment methods.
+                            </p>
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/box-top-3.png" alt="P2P Trading" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="feature-card flex flex-col gap-3 p-5 flex-1 rounded-2xl">
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Verification & Security</h3>
+                            <p class="font-urbanist font-medium text-sm leading-[1.43] text-text-tertiary m-0 h-[60px] overflow-hidden">
+                                Fast account verification to increase transaction safety. Your information is protected during every transaction.
+                            </p>
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/box-top-4.png" alt="Verification & Security" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[128px] h-10 bg-accent-primary text-accent-text mt-0">View more</button>
+                </div>
+            </section>
+
+            <!-- Device Section -->
+            <section class="relative w-full pb-[120px] z-10">
+                <div class="w-full flex justify-center">
+                <div class="device-section-container relative flex flex-col items-center gap-10 p-10 w-[840px] max-w-full rounded-2xl overflow-hidden">
+                    <div class="relative z-[1] w-full flex flex-col gap-10">
+                        <div class="flex flex-col self-stretch gap-2">
+                            <h2 class="font-urbanist font-bold text-[32px] leading-[1.25em] text-text-primary text-center m-0">Trade anytime, anywhere, on any device</h2>
+                            <p class="font-urbanist font-medium text-base leading-6 text-text-tertiary text-center m-0">
+                                Enjoy seamless trading across all devices, with secure access anytime and anywhere you need
+                            </p>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-4">
+                            <div class="w-36 h-36 p-1 bg-black/30 backdrop-blur-[16px] rounded flex items-center justify-center">
+                                <img src="images/device-mockup.png" alt="Device Mockup" class="w-full h-full object-contain">
+                            </div>
+                            <div class="flex flex-col gap-4 w-[240px]">
+                                <a href="#" class="app-button flex flex-row items-center self-stretch gap-3 px-4 py-3 rounded-lg no-underline transition-all duration-300 hover:opacity-80">
+                                    <div class="flex flex-col flex-1">
+                                        <span class="font-urbanist font-medium text-xs leading-[1.33] text-text-tertiary">Get in on</span>
+                                        <span class="font-urbanist font-bold text-base leading-6 text-text-primary">Google play</span>
+                                    </div>
+                                    <img src="images/google-play-icon.svg" alt="Google Play" class="w-8 h-8 flex-shrink-0">
+                                </a>
+                                <a href="#" class="app-button flex flex-row items-center self-stretch gap-3 px-4 py-3 rounded-lg no-underline transition-all duration-300 hover:opacity-80">
+                                    <div class="flex flex-col flex-1">
+                                        <span class="font-urbanist font-medium text-xs leading-[1.33] text-text-tertiary">Get in on</span>
+                                        <span class="font-urbanist font-bold text-base leading-6 text-text-primary">App Store</span>
+                                    </div>
+                                    <img src="images/apple-icon.svg" alt="App Store" class="w-8 h-8 flex-shrink-0">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section relative w-full pb-[120px] z-10">
+                <div class="relative z-[1] flex flex-col items-center self-stretch gap-8 w-full">
+                    <div class="flex flex-col items-center self-stretch gap-2 text-center">
+                        <h2 class="font-urbanist font-bold text-[32px] leading-[1.25em] text-text-primary m-0">A crypto payment system trusted by trading platforms</h2>
+                        <p class="font-urbanist font-medium text-base leading-6 text-text-tertiary m-0">
+                            We work with partners through integrated APIs to build a safe, secure, and stable crypto trading environment
+                        </p>
+                    </div>
+                    <div class="stats-cols flex flex-row gap-6 w-full max-w-[1416px]">
+                        <div class="stats-card-large flex flex-col justify-center items-center self-stretch gap-8 p-8 rounded-2xl">
+                            <div class="flex flex-col self-stretch gap-1">
+                                <div class="font-urbanist font-bold text-[36px] leading-[1.33] text-accent-primary m-0">120,000+</div>
+                                <div class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Successful transactions completed</div>
+                            </div>
+                            <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[208px] h-10 bg-accent-primary text-accent-text">P2P Deposit/Withdrawal</button>
+                        </div>
+                        <div class="stats-col-right flex flex-col justify-center gap-6">
+                            <div class="stats-card-small flex flex-row items-center self-stretch gap-8 p-12 rounded-2xl">
+                                <div class="flex flex-col gap-1 flex-1">
+                                    <div class="font-urbanist font-bold text-[36px] leading-[1.33] text-accent-primary m-0">10,000+</div>
+                                    <div class="font-urbanist font-medium text-base leading-6 text-text-primary m-0">Active users every day</div>
+                                </div>
+                                <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center border border-divider rounded-full">
+                                    <img src="images/chart-icon.svg" alt="Chart" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <div class="stats-card-small flex flex-row items-center self-stretch gap-8 p-12 rounded-2xl">
+                                <div class="flex flex-col gap-1 flex-1">
+                                    <div class="font-urbanist font-bold text-[36px] leading-[1.33] text-accent-primary m-0">99.9%</div>
+                                    <div class="font-urbanist font-medium text-base leading-6 text-text-primary m-0">Transaction success rate</div>
+                                </div>
+                                <div class="w-16 h-16 flex-shrink-0 flex items-center justify-center border border-divider rounded-full">
+                                    <img src="images/chart-icon-2.svg" alt="Chart" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Grid Section -->
+            <section class="relative w-full py-[120px] z-10">
+                <div class="flex flex-col items-center self-stretch gap-8 w-full">
+                    <div class="flex flex-col items-center gap-2 w-full max-w-full text-center">
+                        <h2 class="font-urbanist font-bold text-[32px] leading-[1.25em] text-text-primary m-0">Discover a new standard in trading</h2>
+                        <p class="font-urbanist font-medium text-base leading-6 text-text-tertiary m-0">
+                            2ONEPAY ensures secure and reliable payments every day, protecting over 1,000 transactions with advanced systems that help users pay safely and with confidence.
+                        </p>
+                    </div>
+                    <div class="flex flex-row items-center self-stretch gap-6 w-full">
+                        <div class="feature-grid-card flex flex-col items-center gap-4 p-8 w-[456px] flex-1 rounded-2xl">
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/icon-transparent-escrow.png" alt="Transparent in every transaction" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 text-center">Transparent in every transaction, reducing risks effectively</h3>
+                            <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[108px] h-10 bg-accent-primary text-accent-text">View detail</button>
+                        </div>
+                        <div class="feature-grid-card flex flex-col items-center gap-4 p-8 w-[456px] flex-1 rounded-2xl">
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/icon-secure-verified.png" alt="Secure multi-layer escrow" class="w-full h-full object-contain">
+                            </div>
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 text-center">Full peace of mind with a secure, multi-layer escrow system</h3>
+                            <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[108px] h-10 bg-accent-primary text-accent-text">View detail</button>
+                        </div>
+                        <div class="feature-grid-card flex flex-col items-center gap-4 p-8 w-[456px] flex-1 rounded-2xl">
+                            <div class="w-20 h-20 flex-shrink-0">
+                                <img src="images/speed-icon.svg" alt="Speed" class="w-20 h-20 object-contain">
+                            </div>
+                            <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 text-center">Fast processing speed for a smooth user experience overall</h3>
+                            <button class="inline-flex justify-center items-center gap-2 px-4 py-1 rounded-lg font-urbanist text-sm font-bold leading-[1.43] cursor-pointer transition-all duration-300 border-none w-[108px] h-10 bg-accent-primary text-accent-text">View detail</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQs Section -->
+            <section class="relative w-full py-[120px] z-10">
+                <div class="flex flex-col self-stretch gap-4 w-full">
+                    <div class="flex flex-col items-center self-stretch gap-2">
+                        <h2 class="font-urbanist font-bold text-[32px] leading-[1.25em] text-text-primary m-0 text-center">FAQs</h2>
+                    </div>
+                    <div class="flex flex-col gap-4 w-full">
+                        <div class="faq-item active relative flex flex-col self-stretch gap-4 p-8 bg-transparent border border-border rounded-lg cursor-pointer transition-all duration-300 pr-20">
+                            <div class="flex flex-col self-stretch gap-2 flex-1">
+                                <div class="flex flex-row justify-stretch items-stretch self-stretch gap-2">
+                                    <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 flex-1">2ONEPAY là gì?</h3>
+                                </div>
+                                <p class="faq-item-answer font-urbanist font-medium text-sm leading-[1.43] text-text-primary m-0 block">
+                                    2ONEPAY là nền tảng giao dịch tiền số P2P và Escrow giúp bảo vệ người mua và người bán an toàn. Thành lập từ năm 2020, chúng tôi ưu tiên xây dựng môi trường giao dịch minh bạch, hạn chế rủi ro và các hành vi lừa đảo.
+                                </p>
+                            </div>
+                            <div class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center bg-bg-secondary rounded-tr-lg">
+                                <img src="images/chevron-down.svg" alt="Expand" class="faq-item-icon w-4 h-4">
+                            </div>
+                        </div>
+                        <div class="faq-item relative flex flex-col self-stretch gap-4 p-8 bg-transparent border border-border rounded-lg cursor-pointer transition-all duration-300 pr-20">
+                            <div class="flex flex-col self-stretch gap-2 flex-1">
+                                <div class="flex flex-row justify-stretch items-stretch self-stretch gap-2">
+                                    <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 flex-1">Giao dịch trên 2ONEPAY có an toàn không?</h3>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center bg-bg-secondary rounded-tr-lg">
+                                <img src="images/chevron-down-closed.svg" alt="Collapse" class="faq-item-icon w-4 h-4">
+                            </div>
+                        </div>
+                        <div class="faq-item relative flex flex-col self-stretch gap-4 p-8 bg-transparent border border-border rounded-lg cursor-pointer transition-all duration-300 pr-20">
+                            <div class="flex flex-col self-stretch gap-2 flex-1">
+                                <div class="flex flex-row justify-stretch items-stretch self-stretch gap-2">
+                                    <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 flex-1">2ONEPAY khác gì so với giao dịch tự do bên ngoài</h3>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center bg-bg-secondary rounded-tr-lg">
+                                <img src="images/chevron-down-closed.svg" alt="Collapse" class="faq-item-icon w-4 h-4">
+                            </div>
+                        </div>
+                        <div class="faq-item relative flex flex-col self-stretch gap-4 p-8 bg-transparent border border-border rounded-lg cursor-pointer transition-all duration-300 pr-20">
+                            <div class="flex flex-col self-stretch gap-2 flex-1">
+                                <div class="flex flex-row justify-stretch items-stretch self-stretch gap-2">
+                                    <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 flex-1">Ai có thể sử dụng 2ONEPAY</h3>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center bg-bg-secondary rounded-tr-lg">
+                                <img src="images/chevron-down-closed.svg" alt="Collapse" class="faq-item-icon w-4 h-4">
+                            </div>
+                        </div>
+                        <div class="faq-item relative flex flex-col self-stretch gap-4 p-8 bg-transparent border border-border rounded-lg cursor-pointer transition-all duration-300 pr-20">
+                            <div class="flex flex-col self-stretch gap-2 flex-1">
+                                <div class="flex flex-row justify-stretch items-stretch self-stretch gap-2">
+                                    <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0 flex-1">Vì sao nên chọn 2ONEPAY</h3>
+                                </div>
+                            </div>
+                            <div class="absolute top-0 right-0 w-8 h-8 flex items-center justify-center bg-bg-secondary rounded-tr-lg">
+                                <img src="images/chevron-down-closed.svg" alt="Collapse" class="faq-item-icon w-4 h-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative w-full border-t border-border z-10 mt-auto bg-bg-primary">
+        <div class="w-full max-w-[1416px] mx-auto py-10 flex flex-col gap-10">
+            <div class="flex flex-row self-stretch gap-16">
+                <div class="flex flex-col gap-4 w-[400px] flex-shrink-0">
+                    <img src="images/footer-logo.svg" alt="2ONEPAY Logo" class="w-[160.88px] h-8 object-contain">
+                    <div class="flex flex-col self-stretch gap-6">
+                        <p class="font-urbanist font-medium text-base leading-6 text-text-tertiary m-0">
+                            2ONEPAY is a simple digital payment platform that helps businesses accept payments, manage transactions, and track money easily, fast, and securely in one place.
+                        </p>
+                        <img src="images/social-icons.svg" alt="Social Media" class="w-full h-6 object-contain">
+                    </div>
+                </div>
+                <div class="flex flex-row justify-stretch items-stretch gap-6 flex-1">
+                    <div class="flex flex-col gap-4 flex-1">
+                        <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">About Us</h3>
+                        <ul class="flex flex-col self-stretch gap-2">
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">About</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Careers</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Announcements</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">News</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Legal</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-4 w-[202px]">
+                        <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Service</h3>
+                        <ul class="flex flex-col gap-2">
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Affiliate</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Referral</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">BNB</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">OTC Trading</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Historical Market Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-4 flex-1">
+                        <h3 class="font-urbanist font-bold text-xl leading-[1.4em] text-text-primary m-0">Support</h3>
+                        <ul class="flex flex-col self-stretch gap-2">
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">24/7 Chat Support</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Support Center</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Proof of Reserves</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">News</a></li>
+                            <li class="font-urbanist font-medium text-base leading-6 text-text-tertiary"><a href="#" class="text-text-tertiary hover:text-accent-primary transition-colors">Press</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-0 border-t border-border"></div>
+            <div class="flex flex-row justify-center items-center self-stretch gap-2">
+                <p class="font-urbanist font-medium text-base leading-6 text-text-secondary m-0">© 2024 2ONEPAY. All rights reserved.</p>
+                <div class="flex flex-row justify-center items-center gap-2">
+                    <span class="font-urbanist font-medium text-base leading-6 text-text-quaternary">Language</span>
+                    <div class="flex flex-row items-center gap-1 cursor-pointer">
+                        <span class="font-urbanist font-bold text-base leading-6 text-text-secondary">English</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 7L8 11L12 7" stroke="#C0C7D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle: bấm vào ô → active ô đó, hiện text "2ONEPAY là gì?" nếu có
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                var wasActive = this.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function (other) {
+                    other.classList.remove('active');
+                    var icon = other.querySelector('.faq-item-icon');
+                    if (icon) icon.src = 'images/chevron-down-closed.svg';
+                });
+                if (!wasActive) {
+                    this.classList.add('active');
+                    var icon = this.querySelector('.faq-item-icon');
+                    if (icon) icon.src = 'images/chevron-down.svg';
+                }
+            });
+        });
+    </script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

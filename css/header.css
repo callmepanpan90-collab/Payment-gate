@@ -1,0 +1,120 @@
+/* Top Menu / Header Component */
+.top-menu {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    background-color: var(--bg-primary);
+}
+
+.top-menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 16px 252px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.top-menu-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    flex: 1;
+}
+
+.logo {
+    width: 160.88px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item.active {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+.nav-item:hover {
+    color: var(--accent-primary);
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.nav-icon-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-badge {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    font-size: 9px;
+    line-height: 1em;
+    color: var(--text-tertiary);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0;
+    width: 13px;
+    height: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-indicator {
+    position: absolute;
+    left: 32.12px;
+    bottom: -2px;
+    width: 32px;
+    height: 2px;
+    background-color: var(--accent-primary);
+}
+
+.top-menu-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}

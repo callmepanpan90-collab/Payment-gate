@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-urbanist bg-bg-primary text-text-primary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex justify-center items-center gap-2 rounded-lg font-urbanist font-bold cursor-pointer transition-all duration-300 border-none;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-primary text-accent-text;
+  }
+  
+  .btn-secondary {
+    @apply bg-bg-secondary text-accent-primary border border-divider;
+  }
+  
+  .btn-large {
+    @apply px-5 py-2 text-base;
+  }
+}

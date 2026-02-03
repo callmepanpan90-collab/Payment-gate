@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - 2ONEPAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../config/tailwind-theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: window.TAILWIND_THEME_EXTEND } };
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="font-urbanist bg-bg-primary text-text-primary min-h-screen m-0 p-0 overflow-x-hidden">
+    <div class="min-h-screen flex">
+        <!-- Left: header + form -->
+        <div class="flex-1 min-w-0 bg-bg-secondary flex flex-col">
+            <header class="auth-header flex-shrink-0 flex flex-row justify-between items-center gap-10 py-8 px-20">
+                <a href="../index.html" class="flex-shrink-0">
+                    <span class="site-logo relative inline-block w-[160.88px] h-8" role="img" aria-label="2ONEPAY Logo">
+                    <img src="../images/logo.svg" alt="" class="logo-dark w-[160.88px] h-8 object-contain block">
+                    <img src="../images/logo-light.svg" alt="" class="logo-light absolute inset-0 w-full h-full object-contain hidden">
+                </span>
+                </a>
+                <nav class="flex flex-row items-center gap-10">
+                    <div class="flex flex-row items-center gap-2 font-medium text-sm leading-[1.43] text-text-primary">
+                        <img src="../images/global-icon.svg" alt="" class="w-5 h-5">
+                        <select name="lang" aria-label="Language" class="bg-transparent border-none text-text-primary font-medium text-sm cursor-pointer focus:outline-none focus:ring-0 appearance-none pr-6 bg-no-repeat bg-[length:16px] bg-[right_0_center]" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22%3E%3Cpath d=%22M4 6L8 10L12 6%22 stroke=%22%237A89AE%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E');">
+                            <option value="en" selected>English</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </div>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Cookies</a>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Terms</a>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Privacy</a>
+                </nav>
+            </header>
+            <div class="flex-1 flex flex-col gap-8 justify-center px-0 mx-auto w-full max-w-[480px] box-border py-0">
+                <div class="flex p-1 bg-bg-tertiary rounded-full" role="tablist">
+                    <a href="login.html" class="flex-1 flex items-center justify-center py-1.5 px-10 rounded-full font-bold text-base text-text-secondary bg-transparent no-underline hover:text-text-primary transition-colors" role="tab" aria-selected="false">Login</a>
+                    <button type="button" class="flex-1 py-1.5 px-10 rounded-full font-bold text-base text-accent-text bg-accent-primary cursor-pointer transition-colors" role="tab" aria-selected="true">Sign up</button>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-bold text-[36px] leading-tight text-center text-text-primary m-0">Sign up your account</h1>
+                    <p class="font-medium text-sm leading-[1.43] text-center text-text-tertiary m-0">You will use this email to sign in and access all the products and services</p>
+                </div>
+                <form id="signupForm" action="#" method="post" class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-1">
+                        <label for="signup-email" class="font-medium text-sm leading-[1.43] text-text-secondary">Email/Phone number</label>
+                        <input type="text" id="signup-email" name="email" placeholder="Placeholder" value="nguyenvana@gmail.com" autocomplete="username" required class="w-full h-12 px-3 py-1 rounded-lg border border-divider bg-bg-primary text-text-primary text-sm font-medium font-[inherit] box-border placeholder:text-text-tertiary focus:outline-none focus:border-accent-primary focus:ring-2 focus:ring-accent-primary/20">
+                    </div>
+                    <div class="flex flex-col gap-0">
+                        <label class="flex items-start gap-3 cursor-pointer font-medium text-sm leading-[1.43] text-text-primary">
+                            <input type="checkbox" id="signup-terms" name="terms" required class="w-5 h-5 mt-0.5 flex-shrink-0 rounded cursor-pointer accent-accent-primary">
+                            <span class="flex-1">By creating an account, I agree to 2ONEPAY's <a href="#" class="text-accent-primary no-underline hover:underline">Term of Service</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="inline-flex items-center justify-center h-12 px-5 rounded-lg gap-2 bg-accent-primary text-accent-text font-bold text-base leading-6 border-none cursor-pointer transition-opacity hover:opacity-95 active:scale-[0.99]">Next step</button>
+                </form>
+                <div class="flex items-center gap-4">
+                    <span class="flex-1 h-px bg-divider"></span>
+                    <strong class="font-medium text-sm text-text-quaternary">OR</strong>
+                    <span class="flex-1 h-px bg-divider"></span>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <button type="button" class="flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-divider bg-transparent text-text-primary font-bold text-base leading-6 cursor-pointer hover:bg-bg-tertiary/50 hover:border-bg-tertiary transition-colors">
+                        <img src="../images/google-icon.png" alt="" class="w-5 h-5 object-contain">
+                        <span>Continue with Google</span>
+                    </button>
+                    <button type="button" class="flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-divider bg-transparent text-text-primary font-bold text-base leading-6 cursor-pointer hover:bg-bg-tertiary/50 hover:border-bg-tertiary transition-colors">
+                        <img src="../images/apple-icon-login.svg" alt="" class="w-5 h-5 object-contain">
+                        <span>Continue with Apple</span>
+                    </button>
+                    <button type="button" class="flex items-center justify-center gap-3 px-4 py-3 rounded-lg border border-divider bg-transparent text-text-primary font-bold text-base leading-6 cursor-pointer hover:bg-bg-tertiary/50 hover:border-bg-tertiary transition-colors">
+                        <img src="../images/telegram-icon.svg" alt="" class="w-5 h-5 object-contain">
+                        <span>Continue with Telegram</span>
+                    </button>
+                </div>
+                <p class="font-medium text-sm leading-[1.43] text-text-tertiary text-center m-0">
+                    Already have an account? <a href="login.html" class="text-accent-primary no-underline hover:underline">Log in</a>
+                </p>
+            </div>
+        </div>
+        <!-- Right: background + mask + rewards -->
+        <div class="w-[800px] flex-shrink-0 bg-bg-primary relative overflow-hidden">
+            <img src="../images/login-mask-group.svg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.08] pointer-events-none" aria-hidden="true">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-6 items-center text-center z-[2] pointer-events-none">
+                <h1 class="font-bold text-[36px] leading-[1.33] text-center text-text-primary m-0 w-[481px]">Up to <span class="text-accent-primary">1.000 USD</span> for<br>sign up rewards</h1>
+                <img src="../images/rewards-group.svg" alt="" class="w-[180px] h-[182px] object-contain block" width="180" height="182" aria-hidden="true">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!document.getElementById('signup-terms').checked) {
+                alert('Please agree to the Term of Service.');
+                return;
+            }
+            window.location.href = 'verify-email.html';
+        });
+    </script>
+    <script src="../js/theme.js"></script>
+</body>
+</html>

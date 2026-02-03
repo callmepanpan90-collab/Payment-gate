@@ -1,0 +1,276 @@
+/* Custom styles for complex positioning that can't be done with Tailwind */
+/* Layout: body full (background). Hero: full màn, .hero__container 1416px. Main: full, .content 1416px chứa Features, Device, Stats, Features Grid, FAQs */
+
+/* ========== Light / Dark theme (data-theme trên <html>) ========== */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #0B0F19;
+  --bg-secondary: #191E29;
+  --bg-tertiary: #283043;
+  --text-primary: #E9EBF1;
+  --text-secondary: #C0C7D8;
+  --text-tertiary: #7A89AE;
+  --text-quaternary: #516185;
+  --accent-primary: #66FF4C;
+  --accent-text: #1A1A1A;
+  --divider: #283043;
+  --border: #191E29;
+  --background-neutral-invert-hover: rgba(93, 93, 93, 1);
+}
+
+[data-theme="light"] {
+  --bg-primary: #F5F6F8;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #E9EBF1;
+  --text-primary: #0B0F19;
+  --text-secondary: #191E29;
+  --text-tertiary: #516185;
+  --text-quaternary: #7A89AE;
+  --accent-primary: #22C55E;
+  --accent-text: #FFFFFF;
+  --divider: #E9EBF1;
+  --border: #E9EBF1;
+  --background-neutral-invert-hover: rgba(93, 93, 93, 1);
+}
+
+/* Theme toggle: dark = hiện sun (bấm sang light), light = hiện moon (bấm sang dark) */
+.theme-icon-sun { display: inline-block; }
+.theme-icon-moon { display: none; }
+[data-theme="light"] .theme-icon-sun { display: none; }
+[data-theme="light"] .theme-icon-moon { display: inline-block; }
+
+/* Logo: dark = logo.svg, light = logo-light.svg */
+.logo-light { display: none; }
+[data-theme="light"] .logo-dark { display: none; }
+[data-theme="light"] .logo-light { display: block; }
+
+/* Hero Background Elements */
+.bg-pattern {
+    position: absolute;
+    left: -54px;
+    top: 51.95px;
+    width: 2114.83px;
+    height: 656.05px;
+    max-height: 656.05px;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-image-11 {
+    display: none;
+}
+
+/* Hero: dùng nguyên main-bg.png làm nền */
+.hero-main-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    top: -22px;
+}
+
+.bg-group-2085662978 {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 0;
+}
+
+.bg-object-vp {
+    left: 198.48px;
+    top: 22.02px;
+    width: 187.52px;
+    height: 174.34px;
+}
+
+.bg-object-usdp {
+    left: 237.78px;
+    top: 333.48px;
+    width: 187.15px;
+    height: 174px;
+}
+
+.bg-object-vp .bg-object-text {
+    font-size: 56.54471969604492px;
+    line-height: 0.75em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-object-usdp .bg-object-text {
+    font-size: 46.36216354370117px;
+    line-height: 0.75em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-indicator {
+    position: absolute;
+    left: 32.12px;
+    bottom: -2px;
+    width: 32px;
+    height: 2px;
+    background-color: #66FF4C;
+}
+
+.nav-badge {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    font-size: 9px;
+    line-height: 1em;
+    width: 13px;
+    height: 9px;
+}
+
+.stats-bg {
+    position: absolute;
+    left: 136px;
+    top: -193px;
+    width: 1144.29px;
+    height: 858.07px;
+    opacity: 0.23999999463558197;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Feature cards – nền dùng ảnh Frame 33.png (đã có viền xanh + gradient góc dưới trái) */
+.feature-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-image: url("../images/background-box-top.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-grid-card {
+    border: none;
+    background-image: url("../images/Frame-36.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.device-section-container {
+    border: none;
+    background-image: url("../images/background-download.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Stats section: nền dùng CSS background (tránh bị che) */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    left: 136px;
+    top: -193px;
+    width: 1144.29px;
+    height: 858.07px;
+    background-image: url("../images/stats-bg1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Stats 2 cột bằng nhau: mỗi cột 50% trừ nửa gap (gap-6 = 24px) */
+.stats-cols > * {
+    flex: 0 0 calc(50% - 12px);
+    min-width: 0;
+}
+
+.stats-card-large,
+.stats-card-small {
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(40, 48, 67, 1);
+    background:rgba(0, 0, 0, 0.3);
+
+}
+
+.app-button {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(16px);
+}
+
+/* FAQ item: ẩn nội dung trả lời, chỉ hiện khi active */
+.faq-item .faq-item-answer {
+    display: none;
+}
+
+.faq-item.active .faq-item-answer {
+    display: block;
+}
+
+/* FAQ item: tiêu đề trắng khi không active, cam khi active */
+.faq-item h3 {
+    color: var(--text-primary, #E9EBF1);
+}
+
+.faq-item.active h3 {
+    color: #FF451E;
+}
+
+/* FAQ item active: border cam + nền linear từ trên xuống */
+.faq-item.active {
+    border: 1px solid var(--border-secondary-normal, rgba(255, 69, 30, 1));
+    background: linear-gradient(180deg, rgba(235, 41, 0, 0.2) 0%, rgba(235, 41, 0, 0) 100%);
+}
+
+/* Verify email: OTP input boxes */
+.otp-digit {
+    flex: 1;
+    min-width: 0;
+    border-radius: 0.5rem;
+    border: 1px solid #516185;
+    background-color: #0B0F19;
+    color: #C0C7D8;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: inherit;
+    padding: 1.25rem 1.5rem;
+    box-sizing: border-box;
+}
+.otp-digit:focus {
+    outline: none;
+    border-color: #66FF4C;
+    box-shadow: 0 0 0 2px rgba(102, 255, 76, 0.2);
+}
+
+/* Auth header: language dropdown – tông tối theme, bo góc */
+.auth-header select[name="lang"] {
+    color: #E9EBF1;
+    border-radius: 8px;
+    padding: 6px 28px 6px 8px;
+    background-color: transparent;
+}
+.auth-header select[name="lang"] option {
+    background: #191E29;
+    color: #E9EBF1;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.auth-header select[name="lang"] option:checked {
+    background: #283043;
+    color: #E9EBF1;
+}

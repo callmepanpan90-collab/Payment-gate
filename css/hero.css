@@ -1,0 +1,231 @@
+/* Hero Section Component */
+.hero-section {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 174px 252px 202px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: transparent;
+    min-height: 708px;
+    max-height: 708px;
+    overflow: hidden;
+}
+
+/* Hero Background Elements */
+.bg-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 0;
+}
+
+.bg-pattern {
+    position: absolute;
+    left: -54px;
+    top: 51.95px;
+    width: 2114.83px;
+    height: 656.05px;
+    max-height: 656.05px;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-image-11 {
+    display: none; /* Ẩn image-11 vì nó nằm ngoài phạm vi hero */
+}
+
+.mask-group {
+    position: absolute;
+    width: 413px;
+    height: 493px;
+    opacity: 0.2;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mask-group-1 {
+    left: calc(50% + 1205px - 960px);
+    top: 198px;
+    transform: translateX(-50%);
+}
+
+.mask-group-2 {
+    left: calc(50% + 332px - 960px);
+    top: 198px;
+    transform: translateX(-50%) scaleX(-1);
+}
+
+.mask-group img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 1416px;
+    max-width: 100%;
+    z-index: 1;
+}
+
+/* Hero Background Group */
+.bg-group-2085662978 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 432px;
+    height: 532.88px;
+    max-height: 532.88px;
+    opacity: 0.16;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-group-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 432px;
+    height: 532.88px;
+    object-fit: contain;
+}
+
+.bg-objects {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-object {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-object img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-object-vp {
+    left: 198.48px;
+    top: 22.02px;
+    width: 187.52px;
+    height: 174.34px;
+}
+
+.bg-object-usdp {
+    left: 237.78px;
+    top: 333.48px;
+    width: 187.15px;
+    height: 174px;
+}
+
+.bg-object-text {
+    position: absolute;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    color: rgba(109, 85, 67, 0.6);
+    text-align: center;
+}
+
+.bg-object-vp .bg-object-text {
+    font-size: 56.54471969604492px;
+    line-height: 0.75em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-object-usdp .bg-object-text {
+    font-size: 46.36216354370117px;
+    line-height: 0.75em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-title {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1em;
+    text-align: center;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.hero-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16.67px;
+}
+
+.hero-image-main {
+    width: 165.33px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.hero-image-divider {
+    width: 0.83px;
+    height: 16.67px;
+    object-fit: contain;
+}
+
+.hero-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6.67px;
+}
+
+.hero-rating-image {
+    width: 154.67px;
+    height: 26.67px;
+    object-fit: contain;
+}
+
+.hero-rating-text {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 16.67px;
+    line-height: 1.4em;
+    color: var(--text-primary);
+}

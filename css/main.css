@@ -1,0 +1,128 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0B0F19;
+    --bg-secondary: #191E29;
+    --bg-tertiary: #283043;
+    --text-primary: #E9EBF1;
+    --text-secondary: #C0C7D8;
+    --text-tertiary: #7A89AE;
+    --text-quaternary: #516185;
+    --accent-primary: #66FF4C;
+    --accent-text: #1A1A1A;
+    --divider: #283043;
+    --border: #191E29;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    z-index: -2;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 16px;
+    border-radius: 8px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4285714285714286em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    width: 108px;
+    height: 40px;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--accent-text);
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--accent-primary);
+    border: 1px solid var(--divider);
+}
+
+.btn-large {
+    width: 164px;
+    height: 48px;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-primary);
+}
+
+/* Lists */
+ul {
+    list-style: none;
+}
+
+/* Utility Classes */
+.icon-button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.icon-button:hover {
+    opacity: 0.8;
+}
+
+.divider {
+    width: 1px;
+    height: 16px;
+    background-color: var(--divider);
+}

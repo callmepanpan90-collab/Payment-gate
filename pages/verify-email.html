@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify email - 2ONEPAY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../config/tailwind-theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: window.TAILWIND_THEME_EXTEND } };
+    </script>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="font-urbanist bg-bg-primary text-text-primary min-h-screen m-0 p-0 overflow-x-hidden">
+    <div class="min-h-screen flex">
+        <!-- Left: header + form -->
+        <div class="flex-1 min-w-0 bg-bg-secondary flex flex-col">
+            <header class="auth-header flex-shrink-0 flex flex-row justify-between items-center gap-10 py-8 px-20">
+                <a href="../index.html" class="flex-shrink-0">
+                    <span class="site-logo relative inline-block w-[160.88px] h-8" role="img" aria-label="2ONEPAY Logo">
+                    <img src="../images/logo.svg" alt="" class="logo-dark w-[160.88px] h-8 object-contain block">
+                    <img src="../images/logo-light.svg" alt="" class="logo-light absolute inset-0 w-full h-full object-contain hidden">
+                </span>
+                </a>
+                <nav class="flex flex-row items-center gap-10">
+                    <div class="flex flex-row items-center gap-2 font-medium text-sm leading-[1.43] text-text-primary">
+                        <img src="../images/global-icon.svg" alt="" class="w-5 h-5">
+                        <select name="lang" aria-label="Language" class="bg-transparent border-none text-text-primary font-medium text-sm cursor-pointer focus:outline-none focus:ring-0 appearance-none pr-6 bg-no-repeat bg-[length:16px] bg-[right_0_center]" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22%3E%3Cpath d=%22M4 6L8 10L12 6%22 stroke=%22%237A89AE%22 stroke-width=%221.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E');">
+                            <option value="en" selected>English</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="zh">中文</option>
+                            <option value="ja">日本語</option>
+                            <option value="ko">한국어</option>
+                        </select>
+                    </div>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Cookies</a>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Terms</a>
+                    <a href="#" class="font-medium text-sm text-text-primary no-underline hover:underline">Privacy</a>
+                </nav>
+            </header>
+            <div class="flex-1 flex flex-col gap-12 px-0 mx-auto w-full max-w-[480px] box-border pt-[122px] pb-0">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-4">
+                            <a href="signup.html" class="flex items-center justify-center w-8 h-8 flex-shrink-0 text-text-primary no-underline hover:opacity-80 transition-opacity" aria-label="Back to Sign up">
+                                <img src="../images/arrow-left-02.png" alt="" class="w-8 h-8 object-contain" width="32" height="32">
+                            </a>
+                            <h1 class="font-bold text-[36px] leading-[1.33] text-text-primary m-0">Verify your email</h1>
+                        </div>
+                        <p class="font-medium text-sm leading-[1.43] text-text-tertiary m-0">You will use this email to sign in and access all the products and services</p>
+                    </div>
+                    <form id="verifyForm" action="#" method="post" class="flex flex-col gap-5">
+                        <div class="flex flex-col items-center gap-5">
+                            <img src="../images/Verification Icon.png" alt="" class="w-[100px] h-[100px] flex-shrink-0 object-contain" width="100" height="100" aria-hidden="true">
+                            <div class="flex flex-col items-center justify-center gap-0 w-full">
+                                <p class="font-medium text-sm leading-[1.43] text-text-tertiary m-0 text-center">We've sent an email with an activation code to your email</p>
+                                <p class="font-bold text-xl leading-[1.4] text-text-primary m-0 text-center" id="verify-email-display">nguyenvana@gmail.com</p>
+                            </div>
+                        </div>
+                        <input type="hidden" name="code" id="verify-code-combined" value="">
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="flex flex-row flex-wrap justify-stretch items-stretch gap-4 w-full" id="otp-container">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" data-otp-index="0" class="otp-digit" aria-label="Digit 1">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" data-otp-index="1" class="otp-digit" aria-label="Digit 2">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" data-otp-index="2" class="otp-digit" aria-label="Digit 3">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" data-otp-index="3" class="otp-digit" aria-label="Digit 4">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" data-otp-index="4" class="otp-digit" aria-label="Digit 5">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" data-otp-index="5" class="otp-digit" aria-label="Digit 6">
+                            </div>
+
+                            <div class="flex flex-row items-center justify-end gap-1 w-full">
+                                <span class="font-medium text-sm leading-[1.43] text-[#C0C7D8] m-0">Didn't receive a code?</span>
+                                <span class="flex items-center gap-1">
+<span id="resendCountdownWrap" class="hidden"><span id="resendCountdown" class="font-bold text-[#FF451E]">09s</span></span>
+                                <button type="button" id="resendBtn" class="font-bold text-sm text-[#FF451E] bg-transparent border-none cursor-pointer p-0 leading-[1.43]">09s</button>
+                                </span>
+                            </div>
+                        </div>
+                       
+                        <button type="submit" class="w-full inline-flex items-center justify-center h-12 py-2 px-5 rounded-lg gap-2 bg-[#66FF4C] text-[#1A1A1A] font-bold text-base leading-6 border-none cursor-pointer transition-opacity hover:opacity-95 active:scale-[0.99]">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Right: background + mask + rewards -->
+        <div class="w-[800px] flex-shrink-0 bg-bg-primary relative overflow-hidden">
+            <img src="../images/login-mask-group.svg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.08] pointer-events-none" aria-hidden="true">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-6 items-center text-center z-[2] pointer-events-none">
+                <h1 class="font-bold text-[36px] leading-[1.33] text-center text-text-primary m-0 w-[481px]">Up to <span class="text-accent-primary">1.000 USD</span> for<br>sign up rewards</h1>
+                <img src="../images/rewards-group.svg" alt="" class="w-[180px] h-[182px] object-contain block" width="180" height="182" aria-hidden="true">
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var otpInputs = document.querySelectorAll('.otp-digit');
+            var form = document.getElementById('verifyForm');
+            function getOtpValue() {
+                return Array.from(otpInputs).map(function(inp) { return inp.value; }).join('');
+            }
+            if (form) form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (getOtpValue().length === 6) window.location.href = 'register.html';
+            });
+            otpInputs.forEach(function(input, i) {
+                input.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '').slice(0, 1);
+                    if (this.value && otpInputs[i + 1]) otpInputs[i + 1].focus();
+                });
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Backspace' && !this.value && i > 0) otpInputs[i - 1].focus();
+                });
+                input.addEventListener('paste', function(e) {
+                    e.preventDefault();
+                    var paste = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '').slice(0, 6);
+                    paste.split('').forEach(function(ch, j) {
+                        if (otpInputs[i + j]) otpInputs[i + j].value = ch;
+                    });
+                    var last = Math.min(i + paste.length, otpInputs.length) - 1;
+                    if (otpInputs[last]) otpInputs[last].focus();
+                });
+            });
+        })();
+    </script>
+    <script src="../js/theme.js"></script>
+</body>
+</html>
