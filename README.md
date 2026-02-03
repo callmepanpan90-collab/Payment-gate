@@ -10,7 +10,7 @@ This is a static HTML project using Tailwind CSS.
 
 1. Clone the repository (if you haven't already):
    ```bash
-   git clone https://github.com/tenishasung43020-web/Payment-Gate.git
+   git clone https://github.com/callmepanpan90-collab/Payment-gate.git
    ```
 
 2. Navigate to the project directory:
@@ -36,7 +36,7 @@ This command runs `tailwindcss` in watch mode.
 
 ## Building for Production
 
-To build the minified CSS for production:
+To build the minified CSS for production (Optional - not required to run the site):
 
 ```bash
 npm run build
