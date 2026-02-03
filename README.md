@@ -24,23 +24,7 @@ This is a static HTML project using Tailwind CSS.
    npm install
    ```
 
-## Development
 
-To watch for changes in your CSS files and rebuild automatically during development:
-
-```bash
-npm run build-css
-```
-
-This command runs `tailwindcss` in watch mode.
-
-## Building for Production
-
-To build the minified CSS for production (Optional - not required to run the site):
-
-```bash
-npm run build
-```
 
 ## Running the Website
 
